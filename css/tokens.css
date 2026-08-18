@@ -1,0 +1,125 @@
+/* ==========================================================================
+   tokens.css — Design system variables
+   Single place to change the entire look of the site.
+   ========================================================================== */
+
+:root {
+  /* ---- Surfaces (deep charcoal-navy) ------------------------------------ */
+  --c-bg:            #090C12;   /* page background            */
+  --c-bg-alt:        #0D111A;   /* alternating section bands  */
+  --c-surface:       #121824;   /* cards                      */
+  --c-surface-2:     #182031;   /* raised / hover cards       */
+  --c-surface-3:     #1F2939;   /* chips, inputs              */
+
+  /* ---- Lines ------------------------------------------------------------ */
+  --c-line:          #212B3D;
+  --c-line-soft:     #19212F;
+  --c-line-strong:   #33415A;
+
+  /* ---- Text ------------------------------------------------------------- */
+  --c-text:          #EAEEF6;
+  --c-text-soft:     #B4BFD2;
+  --c-text-muted:    #8593AB;
+  /* Lightened from a dimmer grey so that even the smallest labels clear
+     WCAG AA (4.5:1) against every surface in this palette. */
+  --c-text-faint:    #808DA8;
+
+  /* ---- Primary accent: amber -------------------------------------------- */
+  --c-amber:         #F2A93B;
+  --c-amber-bright:  #FFC46B;
+  --c-amber-deep:    #C4801E;
+  --c-amber-soft:    rgba(242, 169, 59, 0.12);
+  --c-amber-line:    rgba(242, 169, 59, 0.32);
+  --c-amber-glow:    rgba(242, 169, 59, 0.20);
+
+  /* ---- Secondary accent: steel blue -------------------------------------- */
+  --c-steel:         #7FA9D8;
+  --c-steel-bright:  #A6C6EA;
+  --c-steel-deep:    #4E7BA8;
+  --c-steel-soft:    rgba(127, 169, 216, 0.10);
+  --c-steel-line:    rgba(127, 169, 216, 0.28);
+
+  /* ---- Typography -------------------------------------------------------- */
+  --f-display: "Space Grotesk", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-body:    "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono:    "JetBrains Mono", "SF Mono", "Consolas", "Liberation Mono", monospace;
+
+  /* Fluid type scale */
+  --t-display:  clamp(2.6rem, 1.4rem + 4.6vw, 5.1rem);
+  --t-h2:       clamp(1.9rem, 1.3rem + 2.1vw, 2.9rem);
+  --t-h3:       clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
+  --t-h4:       clamp(1.02rem, 0.95rem + 0.3vw, 1.18rem);
+  --t-body:     clamp(0.95rem, 0.92rem + 0.16vw, 1.03rem);
+  --t-small:    0.845rem;
+  --t-micro:    0.72rem;
+
+  /* ---- Spacing scale (8px base) ------------------------------------------ */
+  --s-1:  0.25rem;
+  --s-2:  0.5rem;
+  --s-3:  0.75rem;
+  --s-4:  1rem;
+  --s-5:  1.5rem;
+  --s-6:  2rem;
+  --s-7:  2.75rem;
+  --s-8:  3.5rem;
+  --s-9:  5rem;
+  --s-10: 7rem;
+
+  /* Vertical rhythm between major sections */
+  --section-pad: clamp(4.5rem, 3rem + 7vw, 8.5rem);
+
+  /* ---- Layout ------------------------------------------------------------ */
+  --wrap:        1240px;
+  --wrap-narrow: 900px;
+  --gutter:      clamp(1.15rem, 0.6rem + 2.4vw, 2.75rem);
+  --nav-h:       72px;
+
+  /* ---- Geometry ----------------------------------------------------------
+     The signature shape of this site is a *chamfered* (cut) corner rather
+     than a rounded pill — a "build panel" motif.                             */
+  --chamfer:    14px;
+  --chamfer-sm: 9px;
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-pill: 999px;
+
+  /* ---- Elevation ---------------------------------------------------------- */
+  --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --sh-2: 0 8px 24px -12px rgba(0, 0, 0, 0.7);
+  --sh-3: 0 22px 48px -20px rgba(0, 0, 0, 0.85);
+
+  /* ---- Motion ------------------------------------------------------------- */
+  --e-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --e-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --d-fast:  140ms;
+  --d-base:  260ms;
+  --d-slow:  520ms;
+
+  /* Header sits ABOVE the mobile drawer's scrim so the brand and the close
+     button stay legible and clickable while the drawer is open. */
+  --z-nav: 130;
+  --z-menu: 120;
+}
+
+/* Chamfered corner utility — cuts the top-left and bottom-right corners. */
+.chamfer {
+  clip-path: polygon(
+    var(--chamfer) 0,
+    100% 0,
+    100% calc(100% - var(--chamfer)),
+    calc(100% - var(--chamfer)) 100%,
+    0 100%,
+    0 var(--chamfer)
+  );
+}
+
+.chamfer-sm {
+  clip-path: polygon(
+    var(--chamfer-sm) 0,
+    100% 0,
+    100% calc(100% - var(--chamfer-sm)),
+    calc(100% - var(--chamfer-sm)) 100%,
+    0 100%,
+    0 var(--chamfer-sm)
+  );
+}

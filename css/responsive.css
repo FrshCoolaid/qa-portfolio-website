@@ -1,0 +1,280 @@
+/* ==========================================================================
+   responsive.css — Breakpoints, largest to smallest.
+   The mobile layout is designed, not just stacked: the hero panel becomes a
+   compact horizontal strip, the experience tabs become a scrollable chip
+   row, and the journey rail tightens up.
+   ========================================================================== */
+
+/* ==========================================================================
+   Large desktop (1440p and up) — let the content breathe a little more
+   ========================================================================== */
+
+@media (min-width: 1600px) {
+  :root {
+    --wrap: 1360px;
+    --nav-h: 78px;
+  }
+
+  .hero__intro { max-width: 62ch; }
+}
+
+/* ==========================================================================
+   Small desktop / large laptop
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .exp { grid-template-columns: minmax(0, 292px) minmax(0, 1fr); }
+
+  .exp-tab__summary { display: none; }
+
+  .brand__role { display: none; }
+}
+
+/* ==========================================================================
+   Tablet landscape — the navigation collapses here
+   ========================================================================== */
+
+@media (max-width: 960px) {
+
+  /* --- Nav --- */
+  .nav-desktop { display: none; }
+  .nav-toggle { display: grid; }
+
+  /* --- Hero: single column, panel below the copy --- */
+  .section--hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 2.5rem);
+    padding-bottom: var(--s-8);
+  }
+
+  .hero { grid-template-columns: minmax(0, 1fr); gap: var(--s-7); }
+
+  .hero__intro { max-width: 65ch; }
+
+  .hero__scroll { display: none; }
+
+  .hero__panel { max-width: 520px; }
+
+  /* --- About --- */
+  .about { grid-template-columns: minmax(0, 1fr); }
+
+  .profile-card { position: static; max-width: 520px; }
+
+  /* --- Experience: rail becomes a horizontal scroller --- */
+  .exp { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); }
+
+  .exp__rail {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-line-strong) transparent;
+  }
+
+  .exp__rail::-webkit-scrollbar { height: 5px; }
+  .exp__rail::-webkit-scrollbar-track { background: transparent; }
+  .exp__rail::-webkit-scrollbar-thumb {
+    background: var(--c-line-strong);
+    border-radius: 3px;
+  }
+
+  .exp-tab {
+    flex: 0 0 auto;
+    width: auto;
+    grid-template-columns: auto auto;
+    gap: 0.55rem;
+    padding: 0.65rem 0.95rem;
+    scroll-snap-align: start;
+  }
+
+  .exp-tab:hover { transform: none; }
+  .exp-tab__icon { display: none; }
+  .exp__panels { min-height: 0; }
+
+  .exp-panel { padding: var(--s-5); }
+
+  /* --- Credentials --- */
+  .creds { grid-template-columns: minmax(0, 1fr); }
+
+  .creds__side {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  /* --- Contact --- */
+  .contact { grid-template-columns: minmax(0, 1fr); }
+
+  /* --- Skills --- */
+  .skills-split { grid-template-columns: minmax(0, 1fr); }
+
+  /* --- Footer --- */
+  .footer {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+    gap: var(--s-5);
+  }
+
+  .footer__side { align-items: center; }
+}
+
+/* ==========================================================================
+   Tablet portrait / large phone
+   ========================================================================== */
+
+@media (max-width: 720px) {
+
+  .role-card {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--s-5);
+  }
+
+  .role-card__right { text-align: left; }
+
+  .role-card__left { gap: 0.8rem; }
+
+  .role-card__logo { width: 44px; height: 44px; }
+
+  /* Hero stats: 2x2 instead of a cramped single row */
+  .hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-4) var(--s-5);
+  }
+
+  .stat__label { font-size: 0.72rem; }
+
+  /* Contact form goes single-column */
+  .contact-form { padding: var(--s-5); }
+  .contact-form__grid { grid-template-columns: minmax(0, 1fr); }
+
+  /* Journey tightens */
+  .journey { padding-left: 2.15rem; }
+  .journey__track { left: 10px; }
+  .milestone__node { left: -2.15rem; width: 22px; height: 22px; }
+  .milestone__node svg { width: 12px; height: 12px; }
+
+  .cert { padding: var(--s-5); }
+  .cert__head { gap: 0.85rem; }
+  .cert__seal { width: 52px; height: 52px; }
+  .cert__highlights { grid-template-columns: minmax(0, 1fr); }
+
+  .projects { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ==========================================================================
+   Phone
+   ========================================================================== */
+
+@media (max-width: 560px) {
+
+  :root {
+    --nav-h: 64px;
+    --chamfer: 11px;
+  }
+
+  .brand__name { font-size: 0.88rem; }
+
+  /* Tighter hero rhythm so the fold still carries name + role + CTA */
+  .hero__role { gap: 0.65rem; }
+  .hero__role::before { width: 22px; }
+  .hero__tagline { padding-left: 0; font-size: 0.85rem; }
+
+  .hero__actions { gap: 0.55rem; }
+
+  .hero__actions .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .hero__panel { max-width: none; }
+
+  .panel__body { padding: var(--s-4); }
+
+  .coverage__row { padding: 0.45rem 0.4rem; gap: 0.55rem; }
+
+  .about__para:first-child {
+    padding-left: var(--s-4);
+    font-size: 1em;
+  }
+
+  .profile-card { padding: var(--s-4); }
+
+  .profile-card__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.1rem;
+  }
+
+  .profile-card__row dt { padding-top: 0; }
+
+  .project__body { padding: var(--s-4); }
+
+  .skill-group { padding: var(--s-4); }
+
+  .tools, .platforms, .edu, .langs { padding: var(--s-4); }
+
+  .tools__list { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
+
+  .exp-panel { padding: var(--s-4); }
+
+  .exp-panel__head { gap: 0.7rem; }
+  .exp-panel__icon { width: 38px; height: 38px; }
+
+  .contact-item { padding: 0.8rem 0.9rem; gap: 0.7rem; }
+  .contact-item__icon { width: 36px; height: 36px; }
+
+  .contact-form__foot { flex-direction: column; align-items: stretch; }
+  .contact-form__foot .btn { width: 100%; }
+
+  .mobile-menu { width: 100%; border-left: none; }
+}
+
+/* ==========================================================================
+   Very small phone (360px and below) — nothing should overflow here
+   ========================================================================== */
+
+@media (max-width: 380px) {
+  .hero__stats { gap: var(--s-3) var(--s-4); }
+
+  .stat__value { font-size: 1.25rem; }
+
+  .hero__pre { flex-wrap: wrap; gap: 0.35rem; }
+
+  .footer__nav ul { gap: 0.3rem 0.8rem; }
+}
+
+/* ==========================================================================
+   Print — a recruiter hitting Ctrl+P should get something readable
+   ========================================================================== */
+
+@media print {
+  body { background: #fff; color: #111; }
+  body::before, body::after { display: none; }
+
+  .site-header,
+  .hero__scroll,
+  .contact-form,
+  .nav-progress,
+  .mobile-menu,
+  .mobile-menu__scrim { display: none !important; }
+
+  .section { padding-block: 1.5rem; break-inside: avoid; }
+
+  h1, h2, h3, h4, .stat__value, .brand__name { color: #000; }
+
+  .panel, .project, .skill-group, .cert, .milestone__card,
+  .exp-panel, .contact-item, .tools, .platforms, .edu, .langs {
+    background: #fff !important;
+    border: 1px solid #bbb !important;
+    clip-path: none !important;
+    box-shadow: none !important;
+  }
+
+  [data-reveal], [data-hero-anim] { opacity: 1 !important; transform: none !important; }
+
+  /* Show every experience panel on paper, not just the selected tab */
+  .exp-panel[hidden] { display: block !important; }
+  .exp__rail { display: none !important; }
+}

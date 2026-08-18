@@ -1,0 +1,23 @@
+# Dependencies (once we add Playwright)
+node_modules/
+
+# Playwright output (added later, together)
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Environment / secrets — never commit these
+.env
+.env.local
+*.local

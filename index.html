@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Aleksandar Djokic | Senior QA Engineer — AAA Game Development</title>
+  <meta name="description" content="Portfolio of Aleksandar Djokic, Senior QA Engineer with nearly six years of AAA GameDev experience in cross-platform testing, feature validation, test planning, defect management, and release quality." />
+  <meta name="author" content="Aleksandar Djokic" />
+  <meta name="theme-color" content="#090C12" />
+
+  <!-- [REPLACE] Set this to your live URL once deployed. -->
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Aleksandar Djokic — Senior QA Engineer" />
+  <meta property="og:title" content="Aleksandar Djokic | Senior QA Engineer — AAA Game Development" />
+  <meta property="og:description" content="Nearly six years of AAA GameDev QA at Ubisoft. Cross-platform testing across PC, PS5, Xbox Series X and Stadia. ISTQB Foundation Level certified." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aleksandar Djokic | Senior QA Engineer — AAA Game Development" />
+  <meta name="twitter:description" content="Nearly six years of AAA GameDev QA at Ubisoft. Cross-platform testing across PC, PS5, Xbox Series X and Stadia." />
+  <meta name="twitter:image" content="assets/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Fonts — self-hosted. See css/fonts.css for where to get the files.
+       The two preloads are the fonts used above the fold (body text and the
+       big hero name); fetching them immediately is what removes the flash.
+       If assets/fonts/ is still empty, delete these two preload lines to
+       avoid a console warning — the site falls back cleanly either way. -->
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/fonts.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Structured data: helps recruiters' tooling and Google understand the page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aleksandar Djokic",
+    "jobTitle": "Senior QA Engineer",
+    "email": "mailto:adjokicc00@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Belgrade",
+      "addressCountry": "RS"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ubisoft Belgrade"
+    },
+    "knowsAbout": [
+      "Quality Assurance",
+      "Game Testing",
+      "Cross-Platform Testing",
+      "Test Planning",
+      "Defect Management",
+      "Regression Testing",
+      "Release Readiness"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ISTQB Foundation Level",
+      "credentialCategory": "certification",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "South East European Testing Board (SEETB)"
+      }
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- The page content is rendered from js/data/portfolio-data.js, so it needs
+       JavaScript. Search engines run JS, but a visitor who has it disabled
+       gets this rather than a blank page. -->
+  <noscript>
+    <div class="noscript-notice">
+      <h1>Aleksandar Djokic — Senior QA Engineer</h1>
+      <p>
+        Nearly six years of AAA game development QA at Ubisoft Belgrade.
+        Cross-platform testing across PC, PlayStation&nbsp;5, Xbox&nbsp;Series&nbsp;X
+        and Stadia. ISTQB Foundation Level certified. Based in Belgrade, Serbia.
+      </p>
+      <p>
+        This portfolio needs JavaScript enabled to display fully.
+        You can reach me directly at
+        <a href="mailto:adjokicc00@gmail.com">adjokicc00@gmail.com</a>.
+      </p>
+    </div>
+  </noscript>
+
+  <!-- ====================================================================
+       HEADER / NAVIGATION — rendered by js/components/navigation.js
+       ==================================================================== -->
+  <header class="site-header" id="site-header" data-testid="site-header"></header>
+
+  <!-- ====================================================================
+       MAIN — each section is rendered by its own component module.
+       The empty containers below are the mount points.
+       ==================================================================== -->
+  <main id="main">
+    <section id="home"        class="section section--hero"  aria-labelledby="home-heading"></section>
+    <section id="about"       class="section section--band"  aria-labelledby="about-heading"></section>
+    <section id="experience"  class="section"                aria-labelledby="experience-heading"></section>
+    <section id="projects"    class="section section--band"  aria-labelledby="projects-heading"></section>
+    <section id="skills"      class="section"                aria-labelledby="skills-heading"></section>
+    <section id="journey"     class="section section--band"  aria-labelledby="journey-heading"></section>
+    <section id="credentials" class="section"                aria-labelledby="credentials-heading"></section>
+    <section id="contact"     class="section section--band"  aria-labelledby="contact-heading"></section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <!-- ====================================================================
+       SCRIPTS
+       Plain classic scripts (no bundler, no modules) so that this site runs
+       by simply opening index.html, and so the code stays easy to edit.
+       Load order matters: data -> helpers -> components -> bootstrap.
+       ==================================================================== -->
+  <script src="js/data/portfolio-data.js"></script>
+
+  <script src="js/lib/dom.js"></script>
+  <script src="js/lib/icons.js"></script>
+
+  <script src="js/components/navigation.js"></script>
+  <script src="js/components/hero.js"></script>
+  <script src="js/components/about.js"></script>
+  <script src="js/components/experience.js"></script>
+  <script src="js/components/projects.js"></script>
+  <script src="js/components/skills.js"></script>
+  <script src="js/components/journey.js"></script>
+  <script src="js/components/credentials.js"></script>
+  <script src="js/components/contact.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/components/test-runner.js"></script>
+
+  <script src="js/lib/scroll-spy.js"></script>
+  <script src="js/lib/reveal.js"></script>
+  <script src="js/lib/contact-form.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

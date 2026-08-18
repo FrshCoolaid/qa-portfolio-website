@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Abstract artwork: arched skyline silhouettes under a warm sky">
+  <defs>
+    <linearGradient id="am-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#20222B"/>
+      <stop offset="48%" stop-color="#161822"/>
+      <stop offset="100%" stop-color="#0B0D14"/>
+    </linearGradient>
+    <linearGradient id="am-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A3547"/>
+      <stop offset="100%" stop-color="#242233"/>
+    </linearGradient>
+    <linearGradient id="am-near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1D1D2A"/>
+      <stop offset="100%" stop-color="#0D0F17"/>
+    </linearGradient>
+    <radialGradient id="am-glow" cx="0.28" cy="0.3" r="0.42">
+      <stop offset="0%" stop-color="#F2A93B" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#F2A93B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#am-sky)"/>
+  <rect width="800" height="500" fill="url(#am-glow)"/>
+
+  <!-- sun disc -->
+  <circle cx="224" cy="150" r="52" fill="#F2A93B" opacity="0.16"/>
+  <circle cx="224" cy="150" r="52" fill="none" stroke="#F2A93B" stroke-opacity="0.34" stroke-width="1.5"/>
+
+  <!-- far skyline: domes and towers -->
+  <g fill="url(#am-far)">
+    <path d="M60 330v-58a34 34 0 0 1 68 0v58z"/>
+    <path d="M150 330v-92a22 22 0 0 1 44 0v92z"/>
+    <path d="M330 330v-74a46 46 0 0 1 92 0v74z"/>
+    <path d="M470 330v-104a20 20 0 0 1 40 0v104z"/>
+    <path d="M560 330v-52a38 38 0 0 1 76 0v52z"/>
+    <path d="M680 330v-84a24 24 0 0 1 48 0v84z"/>
+  </g>
+
+  <!-- arcade of arches -->
+  <g fill="none" stroke="#7FA9D8" stroke-opacity="0.20" stroke-width="2">
+    <path d="M96 430v-52a26 26 0 0 1 52 0v52"/>
+    <path d="M196 430v-52a26 26 0 0 1 52 0v52"/>
+    <path d="M296 430v-52a26 26 0 0 1 52 0v52"/>
+    <path d="M396 430v-52a26 26 0 0 1 52 0v52"/>
+    <path d="M496 430v-52a26 26 0 0 1 52 0v52"/>
+    <path d="M596 430v-52a26 26 0 0 1 52 0v52"/>
+  </g>
+
+  <!-- near ground -->
+  <path fill="url(#am-near)" d="M0 430h800v70H0z"/>
+  <path d="M0 430h800" stroke="#F2A93B" stroke-opacity="0.34" stroke-width="1.5"/>
+
+  <!-- geometric motif -->
+  <g stroke="#F2A93B" stroke-opacity="0.45" stroke-width="2" fill="none">
+    <path d="M400 96l30 30-30 30-30-30z"/>
+    <path d="M400 72v18M400 162v18M352 126h-18M466 126h18" stroke-opacity="0.28"/>
+  </g>
+
+  <!-- corner ticks -->
+  <g stroke="#F2A93B" stroke-opacity="0.4" stroke-width="2" fill="none">
+    <path d="M28 28h34M28 28v34"/>
+    <path d="M772 472h-34M772 472v-34"/>
+  </g>
+</svg>

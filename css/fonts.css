@@ -1,0 +1,106 @@
+/* ==========================================================================
+   fonts.css — Self-hosted web fonts.
+   --------------------------------------------------------------------------
+   WHY THIS FILE EXISTS
+
+   Loading fonts from Google's CDN causes a visible flash on first load: the
+   browser paints the page in a fallback font (Segoe UI), then swaps to the
+   real font once it arrives, and because the two fonts have different letter
+   widths and line heights, everything reflows. That is the brief "wrong font
+   + misaligned" moment.
+
+   The cause is a chain of round-trips. The browser must:
+     1. download index.html,
+     2. discover the Google stylesheet link and download it from
+        fonts.googleapis.com,
+     3. parse that CSS to discover the actual .woff2 URLs,
+     4. download those from a SECOND domain, fonts.gstatic.com.
+
+   Steps 3 and 4 cannot start until 1 and 2 finish, so the fonts almost always
+   arrive after the first paint.
+
+   Serving the fonts from your own site collapses that chain: the .woff2 files
+   sit on the same origin as the page, and the <link rel="preload"> tags in
+   index.html start fetching them immediately, in parallel with the CSS. They
+   usually arrive before the first paint, so there is nothing to swap.
+
+   --------------------------------------------------------------------------
+   THIS FILE DOES NOTHING UNTIL YOU ADD THE FONT FILES
+
+   Put seven .woff2 files in  assets/fonts/  using exactly these names.
+   Until then the @font-face rules below simply fail and the browser uses the
+   fallback stack in tokens.css — nothing breaks, you just keep the flash.
+
+   Where to get them (free, no account):
+     https://gwfh.mranftl.com/fonts   ("google webfonts helper")
+
+     - Search "Inter"          -> select weights 400, 500, 600 -> woff2 only
+     - Search "Space Grotesk"  -> select weights 600, 700      -> woff2 only
+     - Search "JetBrains Mono" -> select weights 400, 500      -> woff2 only
+
+   Rename the downloads to match the src paths below. The tool's own names
+   include a version number (e.g. inter-v18-latin-regular.woff2) which changes
+   between releases — renaming keeps this CSS stable.
+   ========================================================================== */
+
+/* --- Inter — body text -------------------------------------------------- */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/inter-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/inter-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/inter-600.woff2") format("woff2");
+}
+
+/* --- Space Grotesk — headings, name, buttons ---------------------------- */
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/space-grotesk-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/space-grotesk-700.woff2") format("woff2");
+}
+
+/* --- JetBrains Mono — labels, chips, version motifs --------------------- */
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/jetbrains-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/jetbrains-mono-500.woff2") format("woff2");
+}
