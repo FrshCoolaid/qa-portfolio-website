@@ -50,11 +50,18 @@ const ContactForm = (function () {
        Set contact.form.enabled = false in js/data/portfolio-data.js.
        Email alone is a perfectly good contact route for a portfolio.
      ====================================================================== */
+     
   function sendMessage(payload) {
-    // Not configured. Reject with a message the UI shows honestly.
-    return Promise.reject(
-      new Error("NOT_CONFIGURED")
-    );
+    return fetch("https://formspree.io/f/mwlealbb", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      if (!res.ok) throw new Error("Send failed");
+    });
   }
 
   /* ====================================================================== */
