@@ -144,7 +144,7 @@ const Contact = (function () {
                   <span class="btn__spinner" aria-hidden="true"></span>
                   <span class="btn__label">Send message</span>
                 </button>
-                <p class="contact-form__note">${DOM.esc(c.form.note)}</p>
+                ${!DOM.isPlaceholder(c.form.note) ? `<p class="contact-form__note">${DOM.esc(c.form.note)}</p>` : ""}
               </div>
 
               <!-- Announced to screen readers on submit -->

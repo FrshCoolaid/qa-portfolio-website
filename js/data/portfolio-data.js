@@ -517,11 +517,11 @@ const PORTFOLIO_DATA = {
     cvFileName: "Aleksandar-Djokic-CV.pdf",
 
     form: {
-      // The form does NOT send anything yet — see js/lib/contact-form.js.
-      // Nothing on the site claims that it does.
+      // Submissions POST to Formspree — see js/lib/contact-form.js.
+      // Success is shown only on a 2xx response; the UI never claims
+      // delivery it cannot confirm.
       enabled: true,
-      note:
-        "This form is not connected to a mail service yet. Until it is, email is the reliable route.",
+      note: "I read everything and usually reply within a couple of days.",
     },
   },
 
