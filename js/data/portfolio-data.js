@@ -260,7 +260,7 @@ const PORTFOLIO_DATA = {
         year: "",
         status: "In development",
         image: null,           // intentionally none — do not add artwork here
-        placeholder: "assets/projects/placeholder-unannounced.svg",
+        placeholder: "assets/projects/unannounced.svg",
         alt: "Abstract redacted artwork representing an unannounced project",
         description:
           "[Add a non-confidential overview of your responsibilities and QA contributions here. Do not include the title, setting, features, dates or any other detail that is not public.]",
@@ -391,7 +391,7 @@ const PORTFOLIO_DATA = {
         tag: "Foundation",
         title: "School of Electrical and Computer Engineering of Applied Studies",
         detail: "Including Routing and Switching — Cisco Academy.",
-        meta: "[ADD YEARS]",
+        meta: "Attended for 1 year",
         confirm: true,
         icon: "book",
       },
@@ -399,7 +399,7 @@ const PORTFOLIO_DATA = {
         tag: "Certified",
         title: "ISTQB Foundation Level",
         detail: "Certified through the South East European Testing Board (SEETB).",
-        meta: "[ADD YEAR]",
+        meta: "2025",
         confirm: true,
         icon: "badge",
       },
