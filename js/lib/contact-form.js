@@ -1,12 +1,15 @@
 /* ==========================================================================
    contact-form.js — Client-side validation and submission handling.
    --------------------------------------------------------------------------
-   IMPORTANT, AND DELIBERATE:
-   The form does NOT send anything anywhere. There is no backend, and the UI
-   never claims a message was delivered. Validation, loading and error states
-   are all real; the send step is a single isolated function you replace.
+   Submissions POST to Formspree — see sendMessage() below. The endpoint is
+   public by necessity: there is no backend to hide it behind, so spam
+   protection is configured on the Formspree side rather than here.
 
-   >>> TO CONNECT A REAL BACKEND, EDIT ONLY `sendMessage()` BELOW. <<<
+   The UI never claims delivery it cannot confirm. Only a 2xx response shows
+   the success message; anything else shows an honest failure with a direct
+   email fallback.
+
+   >>> TO CHANGE PROVIDER, EDIT ONLY `sendMessage()`. <
    Everything above and below it can stay exactly as it is.
    ========================================================================== */
 
@@ -50,18 +53,24 @@ const ContactForm = (function () {
        Set contact.form.enabled = false in js/data/portfolio-data.js.
        Email alone is a perfectly good contact route for a portfolio.
      ====================================================================== */
-     
+
   function sendMessage(payload) {
+    const controller = new AbortController();
+    const timer = setTimeout(function () { controller.abort(); }, 10000);
+
     return fetch("https://formspree.io/f/mwlealbb", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
       },
-      body: JSON.stringify(payload)
-    }).then(function (res) {
-      if (!res.ok) throw new Error("Send failed");
-    });
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("Send failed");
+      })
+      .finally(function () { clearTimeout(timer); });
   }
 
   /* ====================================================================== */
@@ -178,17 +187,6 @@ const ContactForm = (function () {
         })
         .catch(function (err) {
           setLoading(false);
-
-          if (err && err.message === "NOT_CONFIGURED") {
-            // Honest failure. We do not pretend a message was delivered.
-            const email = PORTFOLIO_DATA.contact.email;
-            setStatus(
-              "This form isn't connected to a mail service yet, so nothing was sent. " +
-                "Please email me directly at " + email + ".",
-              "warn"
-            );
-            return;
-          }
 
           setStatus(
             "Something went wrong sending that. Please email me directly at " +
