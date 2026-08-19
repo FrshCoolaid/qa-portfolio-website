@@ -36,7 +36,7 @@ const PORTFOLIO_DATA = {
       "Portfolio of Aleksandar Djokic, Senior QA Engineer with nearly six years of AAA GameDev experience in cross-platform testing, feature validation, test planning, defect management, and release quality.",
     // [REPLACE] with your real deployed URL once it is live, e.g.
     // "https://aleksandardjokic.github.io/qa-portfolio/"
-    siteUrl: "[YOUR_SITE_URL]",
+    siteUrl: "https://frshcoolaid.github.io/qa-portfolio-website/",
     ogImage: "assets/og-image.png", // [ADD ASSET] 1200x630 png — see assets/README.md
     locale: "en_US",
   },
@@ -396,14 +396,6 @@ const PORTFOLIO_DATA = {
         icon: "book",
       },
       {
-        tag: "Certified",
-        title: "ISTQB Foundation Level",
-        detail: "Certified through the South East European Testing Board (SEETB).",
-        meta: "2025",
-        confirm: true,
-        icon: "badge",
-      },
-      {
         tag: "2020",
         title: "Joined Ubisoft Belgrade",
         detail: "Moved into AAA game development QA, working in Agile, cross-functional teams.",
@@ -428,6 +420,14 @@ const PORTFOLIO_DATA = {
         meta: "PC · PS5 · Xbox Series X",
         confirm: false,
         icon: "package",
+      },
+      {
+        tag: "Certified",
+        title: "ISTQB Foundation Level",
+        detail: "Certified through the South East European Testing Board (SEETB).",
+        meta: "2025 · SEETB",
+        confirm: false,
+        icon: "badge",
       },
       {
         tag: "In development",
@@ -461,8 +461,8 @@ const PORTFOLIO_DATA = {
       name: "ISTQB Foundation Level",
       issuer: "South East European Testing Board (SEETB)",
       // [OPTIONAL] add these if you want them displayed
-      year: "[ADD YEAR]",
-      credentialId: "[ADD CREDENTIAL ID — or delete this line to hide it]",
+      year: "2025",
+      credentialId: "25-CTFL-4806-SEETB",
       credentialUrl: "", // [OPTIONAL] link to your certificate; leave "" to hide the button
       blurb:
         "The internationally recognised entry standard for software testing, test design techniques, test levels, defect management and the vocabulary that makes QA legible across teams and industries.",
@@ -478,8 +478,8 @@ const PORTFOLIO_DATA = {
       {
         institution: "School of Electrical and Computer Engineering of Applied Studies",
         qualification: "Routing and Switching — Cisco Academy",
-        period: "[ADD YEARS]",
-        location: "[ADD LOCATION]",
+        period: "Attended for 1 year",
+        location: "Belgrade",
       },
     ],
 
