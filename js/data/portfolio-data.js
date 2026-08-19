@@ -542,10 +542,6 @@ const PORTFOLIO_DATA = {
 
   /* ========================================================================
      11. TEST RUNNER  — placeholder config for the feature we build together
-     ------------------------------------------------------------------------
-     Nothing here is wired up yet. `config.showTestRunner` is false, so the
-     button is not rendered at all. We fill this in during the Playwright /
-     GitHub Actions sessions.
      ======================================================================== */
   testRunner: {
     label: "Test Runner",
