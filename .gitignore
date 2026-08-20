@@ -1,3 +1,25 @@
+# ---- Python ----
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# ---- pytest ----
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---- Python-side test reports ----
+report.html
+allure-results/
+
+# ---- Newman / Postman (M13) ----
+newman/
+
+# ---- M1 learning scratch (delete folder + these two lines at end of M1) ----
+tests/sandbox/
+
 # Dependencies (once we add Playwright)
 node_modules/
 
