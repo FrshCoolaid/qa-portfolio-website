@@ -392,7 +392,7 @@ const PORTFOLIO_DATA = {
         title: "School of Electrical and Computer Engineering of Applied Studies",
         detail: "Including Routing and Switching — Cisco Academy.",
         meta: "Attended for 1 year",
-        confirm: true,
+        confirm: false,
         icon: "book",
       },
       {
