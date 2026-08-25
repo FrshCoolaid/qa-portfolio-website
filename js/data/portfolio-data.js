@@ -36,7 +36,7 @@ const PORTFOLIO_DATA = {
       "Portfolio of Aleksandar Djokic, Senior QA Engineer with nearly six years of AAA GameDev experience in cross-platform testing, feature validation, test planning, defect management, and release quality.",
     // [REPLACE] with your real deployed URL once it is live, e.g.
     // "https://aleksandardjokic.github.io/qa-portfolio/"
-    siteUrl: "https://frshcoolaid.github.io/qa-portfolio-website/",
+    siteUrl: "https://a-djokic.github.io/qa-portfolio-website/",
     ogImage: "assets/og-image.png", // [ADD ASSET] 1200x630 png — see assets/README.md
     locale: "en_US",
   },
